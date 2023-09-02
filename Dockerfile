@@ -11,4 +11,4 @@ RUN VOSK_PATH=`pwd`/vosk-linux-x86_64-0.3.45 \
     CGO_ENABLED=0 GOOS=linux GOARCH=amd64 \
     go build -o test
 
-CMD {"./test"}
+CMD ["./test"]
