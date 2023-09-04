@@ -25,7 +25,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	rec.SetWords(1)
 	fmt.Println(rec)
 
 	file, err := os.Open("./test.mp3")
