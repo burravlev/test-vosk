@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"flag"
 	"fmt"
 	"io"
 	"log"
@@ -11,7 +12,9 @@ import (
 )
 
 func main() {
-	var filename = "test.mp3"
+	var filename string
+	flag.StringVar(&filename, "f", "", "file to transcribe")
+	flag.Parse()
 
 	model, err := vosk.NewModel("model")
 	if err != nil {
