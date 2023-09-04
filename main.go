@@ -28,7 +28,7 @@ func main() {
 	rec.SetWords(1)
 	fmt.Println(rec)
 
-	file, err := os.Open("test.mp3")
+	file, err := os.Open("./test.mp3")
 	if err != nil {
 		panic(err)
 	}
