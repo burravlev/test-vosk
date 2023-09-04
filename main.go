@@ -20,7 +20,7 @@ func main() {
 	// we can check if word is in the vocabulary
 	// fmt.Println(model.FindWord("air"))
 
-	sampleRate := 44100.0
+	sampleRate := 16000.0
 	rec, err := vosk.NewRecognizer(model, sampleRate)
 	if err != nil {
 		log.Fatal(err)
