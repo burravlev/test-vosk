@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"flag"
 	"fmt"
 	"io"
 	"log"
@@ -12,26 +11,24 @@ import (
 )
 
 func main() {
-	var filename string
-	flag.StringVar(&filename, "f", "", "file to transcribe")
-	flag.Parse()
 
 	model, err := vosk.NewModel("model")
 	if err != nil {
 		log.Fatal(err)
 	}
-
+	fmt.Println(model)
 	// we can check if word is in the vocabulary
 	// fmt.Println(model.FindWord("air"))
 
-	sampleRate := 16000.0
+	sampleRate := 44100.0
 	rec, err := vosk.NewRecognizer(model, sampleRate)
 	if err != nil {
 		log.Fatal(err)
 	}
 	rec.SetWords(1)
+	fmt.Println(rec)
 
-	file, err := os.Open(filename)
+	file, err := os.Open("test.mp3")
 	if err != nil {
 		panic(err)
 	}
