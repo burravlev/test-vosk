@@ -50,7 +50,7 @@ func main() {
 			fmt.Println(rec.Result())
 		}
 	}
-
+	fmt.Println(rec.FinalResult)
 	// Unmarshal example for final result
 	var jres map[string]interface{}
 	json.Unmarshal([]byte(rec.FinalResult()), &jres)
